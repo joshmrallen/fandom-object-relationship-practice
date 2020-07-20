@@ -48,6 +48,12 @@ def join_fandom(bands, fan)
     end
 end
 
+def compare(bands)
+    bands.each do |band|
+        puts "#{band.name} has #{band.num_fans} fans."
+    end
+end
+
 def seed
     #creates fans, creates bands and associates them with eachother
     create_bands.each do |band|
@@ -63,5 +69,11 @@ fanny = Fan.new("Fanny")
 
 join_fandom(top_bands, fanny)
 
+compare(top_bands)
 
-binding.pry
+puts "#{Band.most_popular.name} is the most popular with #{Band.most_popular.num_fans} fans."
+
+puts "#{fanny.name} loves music and follows #{fanny.bands.count} bands!"
+
+
+# binding.pry
